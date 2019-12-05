@@ -1,0 +1,722 @@
+{
+    "resourceType": "Bundle",
+    "id": "355ab555-0960-44dc-967a-96b700f5dbbe",
+    "meta": {
+        "profile": [
+            "http://wellsky.com/FHIR/HHH/DSTU3/StructureDefinition/bundle-patient-adt"
+        ]
+    },
+    "type": "message",
+    "link": [
+        {
+            "relation": "self",
+            "url": "http://kinnser.net/KSI/PatientAdtService/v2/PatientAdtMessage/Bundle/355ab555-0960-44dc-967a-96b700f5dbbe"
+        }
+    ],
+    "entry": [
+        {
+            "fullUrl": "http://localhost/fhir/HHH/MessageHeader/8445668e-9cb6-4c9a-b270-b3ad5a8a9d9d",
+            "resource": {
+                "resourceType": "MessageHeader",
+                "id": "8445668e-9cb6-4c9a-b270-b3ad5a8a9d9d",
+                "meta": {
+                    "profile": [
+                        "http://wellsky.com/FHIR/HHH/DSTU3/StructureDefinition/messageheader-hl7"
+                    ]
+                },
+                "extension": [
+                    {
+                        "url": "http://wellsky.com/FHIR/HHH/DSTU3/StructureDefinition/message-correlation-identifier",
+                        "valueString": "PATIENTADT_A03_IntegrationEventTrigger_2041733"
+                    },
+                    {
+                        "url": "http://wellsky.com/FHIR/HHH/DSTU3/StructureDefinition/trigger-event",
+                        "valueCode": "A03"
+                    },
+                    {
+                        "url": "http://wellsky.com/FHIR/HHH/DSTU3/StructureDefinition/trigger-event-date-time",
+                        "valueDateTime": "2019-08-19T11:42:45.427-05:00"
+                    }
+                ],
+                "event": {
+                    "system": "http://hl7.org/fhir/message-events",
+                    "code": "admin-notify"
+                },
+                "destination": [
+                    {
+                        "extension": [
+                            {
+                                "url": "http://wellsky.com/FHIR/HHH/DSTU3/StructureDefinition/receiving-facility",
+                                "valueString": "WellSky-APPLICATION"
+                            },
+                            {
+                                "url": "http://wellsky.com/FHIR/HHH/DSTU3/StructureDefinition/destination-endpoint-http-method",
+                                "valueCode": "POST"
+                            },
+                            {
+                                "url": "http://wellsky.com/FHIR/HHH/DSTU3/StructureDefinition/destination-endpoint-auth-method",
+                                "valueCode": "BASIC"
+                            },
+                            {
+                                "url": "http://wellsky.com/FHIR/HHH/DSTU3/StructureDefinition/destination-endpoint-auth-value",
+                                "valueString": "BASE64ENCVALUE"
+                            }
+                        ],
+                        "name": "HPS-APP",
+                        "endpoint": "https://some.endpoint.com/"
+                    }
+                ],
+                "timestamp": "2019-08-19T16:20:34.1905589+00:00",
+                "source": {
+                    "extension": [
+                        {
+                            "url": "http://wellsky.com/FHIR/HHH/DSTU3/StructureDefinition/sending-facility",
+                            "valueString": "Some Hospice, LLC"
+                        }
+                    ],
+                    "name": "WellSky",
+                    "endpoint": "http://kinnser.net/KSI/PatientAdtService/v2/PatientAdtMessage"
+                },
+                "reason": {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/message-reasons-encounter",
+                            "code": "discharge"
+                        }
+                    ]
+                },
+                "focus": [
+                    {
+                        "reference": "Patient/6612368"
+                    },
+                    {
+                        "reference": "CareTeam/40"
+                    },
+                    {
+                        "reference": "EpisodeOfCare/8613406"
+                    },
+                    {
+                        "reference": "Location/8360"
+                    },
+                    {
+                        "reference": "Practitioner/2457358"
+                    },
+                    {
+                        "reference": "Practitioner/2297658"
+                    },
+                    {
+                        "reference": "Encounter/361320"
+                    },
+                    {
+                        "reference": "AllergyIntolerance/6813084"
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "http://localhost/fhir/HHH/Patient/6612368",
+            "resource": {
+                "resourceType": "Patient",
+                "id": "6612368",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2019-08-19T11:43:44.6310099-05:00"
+                },
+                "identifier": [
+                    {
+                        "system": "http://kinnser.com/FHIR/Coding/HHH/Patient-Key",
+                        "value": "000000001"
+                    },
+                    {
+                        "system": "http://kinnser.com/FHIR/Coding/HHH/External-Patient-ID",
+                        "value": "0000-000-002"
+                    },
+                    {
+                        "system": "http://hl7.org/fhir/sid/us-ssn",
+                        "value": "0001"
+                    },
+                    {
+                        "system": "http://kinnser.com/FHIR/Coding/HHH/Patient-MRN",
+                        "value": "0001"
+                    }
+                ],
+                "name": [
+                    {
+                        "family": "Test",
+                        "given": [
+                            "Patient",
+                            "P"
+                        ]
+                    }
+                ],
+                "telecom": [
+                    {
+                        "system": "phone",
+                        "value": "1234567890",
+                        "use": "home"
+                    }
+                ],
+                "gender": "male",
+                "birthDate": "1964-01-01",
+                "deceasedBoolean": false,
+                "address": [
+                    {
+                        "use": "home",
+                        "type": "both",
+                        "line": [
+                            "123 Some Street"
+                        ],
+                        "city": "Some City",
+                        "state": "TX",
+                        "postalCode": "12345"
+                    }
+                ],
+                "maritalStatus": {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/v3/NullFlavor",
+                            "code": "UNK",
+                            "display": "Unknown"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "fullUrl": "http://localhost/fhir/HHH/CareTeam/40",
+            "resource": {
+                "resourceType": "CareTeam",
+                "id": "40",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2019-08-19T11:43:44.6312574-05:00"
+                },
+                "identifier": [
+                    {
+                        "system": "http://kinnser.com/FHIR/Coding/HHH/IDG-Team-Key",
+                        "value": "40"
+                    }
+                ],
+                "name": "Team D",
+                "subject": {
+                    "reference": "Patient/6612368"
+                }
+            }
+        },
+        {
+            "fullUrl": "http://localhost/fhir/HHH/EpisodeOfCare/8613406",
+            "resource": {
+                "resourceType": "EpisodeOfCare",
+                "id": "8613406",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2019-08-19T11:43:44.6313284-05:00"
+                },
+                "contained": [
+                    {
+                        "resourceType": "Condition",
+                        "id": "admission-diagnosis-934835",
+                        "identifier": [
+                            {
+                                "system": "http://kinnser.com/FHIR/Coding/HHH/Admission-Diagnosis-Key",
+                                "value": "934835"
+                            }
+                        ],
+                        "clinicalStatus": "active",
+                        "code": {
+                            "coding": [
+                                {
+                                    "system": "http://hl7.org/fhir/sid/icd-10",
+                                    "code": "I12",
+                                    "display": "Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease"
+                                }
+                            ],
+                            "text": "I12 - Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease"
+                        },
+                        "subject": {
+                            "reference": "Patient/6612368"
+                        },
+                        "assertedDate": "2019-08-19"
+                    },
+                    {
+                        "resourceType": "Condition",
+                        "id": "admission-diagnosis-934834",
+                        "identifier": [
+                            {
+                                "system": "http://kinnser.com/FHIR/Coding/HHH/Admission-Diagnosis-Key",
+                                "value": "934834"
+                            }
+                        ],
+                        "clinicalStatus": "active",
+                        "code": {
+                            "coding": [
+                                {
+                                    "system": "http://hl7.org/fhir/sid/icd-10",
+                                    "code": "N18",
+                                    "display": "Chronic kidney disease, stage 4 (severe)"
+                                }
+                            ],
+                            "text": "N18 - Chronic kidney disease, stage 4 (severe)"
+                        },
+                        "subject": {
+                            "reference": "Patient/6612368"
+                        },
+                        "assertedDate": "2019-08-19"
+                    },
+                    {
+                        "resourceType": "Condition",
+                        "id": "admission-diagnosis-934836",
+                        "identifier": [
+                            {
+                                "system": "http://kinnser.com/FHIR/Coding/HHH/Admission-Diagnosis-Key",
+                                "value": "934836"
+                            }
+                        ],
+                        "clinicalStatus": "active",
+                        "code": {
+                            "coding": [
+                                {
+                                    "system": "http://hl7.org/fhir/sid/icd-10",
+                                    "code": "I489",
+                                    "display": "Unspecified atrial fibrillation"
+                                }
+                            ],
+                            "text": "I489 - Unspecified atrial fibrillation"
+                        },
+                        "subject": {
+                            "reference": "Patient/6612368"
+                        },
+                        "assertedDate": "2019-08-19"
+                    },
+                    {
+                        "resourceType": "Condition",
+                        "id": "admission-diagnosis-934832",
+                        "identifier": [
+                            {
+                                "system": "http://kinnser.com/FHIR/Coding/HHH/Admission-Diagnosis-Key",
+                                "value": "934832"
+                            }
+                        ],
+                        "clinicalStatus": "active",
+                        "code": {
+                            "coding": [
+                                {
+                                    "system": "http://hl7.org/fhir/sid/icd-10",
+                                    "code": "Z8744",
+                                    "display": "Personal history of urinary (tract) infections"
+                                }
+                            ],
+                            "text": "Z8744 - Personal history of urinary (tract) infections"
+                        },
+                        "subject": {
+                            "reference": "Patient/6612368"
+                        },
+                        "assertedDate": "2019-08-19"
+                    },
+                    {
+                        "resourceType": "Condition",
+                        "id": "admission-diagnosis-932783",
+                        "identifier": [
+                            {
+                                "system": "http://kinnser.com/FHIR/Coding/HHH/Admission-Diagnosis-Key",
+                                "value": "932783"
+                            }
+                        ],
+                        "clinicalStatus": "active",
+                        "code": {
+                            "coding": [
+                                {
+                                    "system": "http://hl7.org/fhir/sid/icd-10",
+                                    "code": "C54",
+                                    "display": "Malignant neoplasm of endometrium"
+                                }
+                            ],
+                            "text": "C54 - Malignant neoplasm of endometrium"
+                        },
+                        "subject": {
+                            "reference": "Patient/6612368"
+                        },
+                        "assertedDate": "2019-08-19"
+                    },
+                    {
+                        "resourceType": "Condition",
+                        "id": "admission-diagnosis-934833",
+                        "identifier": [
+                            {
+                                "system": "http://kinnser.com/FHIR/Coding/HHH/Admission-Diagnosis-Key",
+                                "value": "934833"
+                            }
+                        ],
+                        "clinicalStatus": "active",
+                        "code": {
+                            "coding": [
+                                {
+                                    "system": "http://hl7.org/fhir/sid/icd-10",
+                                    "code": "Z161",
+                                    "display": "Resistance to other specified beta lactam antibiotics"
+                                }
+                            ],
+                            "text": "Z161 - Resistance to other specified beta lactam antibiotics"
+                        },
+                        "subject": {
+                            "reference": "Patient/6612368"
+                        },
+                        "assertedDate": "2019-08-19"
+                    },
+                    {
+                        "resourceType": "Condition",
+                        "id": "admission-diagnosis-934837",
+                        "identifier": [
+                            {
+                                "system": "http://kinnser.com/FHIR/Coding/HHH/Admission-Diagnosis-Key",
+                                "value": "934837"
+                            }
+                        ],
+                        "clinicalStatus": "active",
+                        "code": {
+                            "coding": [
+                                {
+                                    "system": "http://hl7.org/fhir/sid/icd-10",
+                                    "code": "A047",
+                                    "display": "Enterocolitis due to Clostridium difficile, recurrent"
+                                }
+                            ],
+                            "text": "A047 - Enterocolitis due to Clostridium difficile, recurrent"
+                        },
+                        "subject": {
+                            "reference": "Patient/6612368"
+                        },
+                        "assertedDate": "2019-08-19"
+                    },
+                    {
+                        "resourceType": "Condition",
+                        "id": "admission-diagnosis-934838",
+                        "identifier": [
+                            {
+                                "system": "http://kinnser.com/FHIR/Coding/HHH/Admission-Diagnosis-Key",
+                                "value": "934838"
+                            }
+                        ],
+                        "clinicalStatus": "active",
+                        "code": {
+                            "coding": [
+                                {
+                                    "system": "http://hl7.org/fhir/sid/icd-10",
+                                    "code": "K21",
+                                    "display": "Gastro-esophageal reflux disease without esophagitis"
+                                }
+                            ],
+                            "text": "K21 - Gastro-esophageal reflux disease without esophagitis"
+                        },
+                        "subject": {
+                            "reference": "Patient/6612368"
+                        },
+                        "assertedDate": "2019-08-19"
+                    }
+                ],
+                "identifier": [
+                    {
+                        "system": "http://kinnser.com/FHIR/Coding/HHH/Admission-Key",
+                        "value": "8613406"
+                    }
+                ],
+                "status": "finished",
+                "diagnosis": [
+                    {
+                        "condition": {
+                            "reference": "#admission-diagnosis-934835"
+                        },
+                        "rank": 1
+                    },
+                    {
+                        "condition": {
+                            "reference": "#admission-diagnosis-934834"
+                        },
+                        "rank": 2
+                    },
+                    {
+                        "condition": {
+                            "reference": "#admission-diagnosis-934836"
+                        },
+                        "rank": 3
+                    },
+                    {
+                        "condition": {
+                            "reference": "#admission-diagnosis-934832"
+                        },
+                        "rank": 4
+                    },
+                    {
+                        "condition": {
+                            "reference": "#admission-diagnosis-932783"
+                        },
+                        "rank": 5
+                    },
+                    {
+                        "condition": {
+                            "reference": "#admission-diagnosis-934833"
+                        },
+                        "rank": 6
+                    },
+                    {
+                        "condition": {
+                            "reference": "#admission-diagnosis-934837"
+                        },
+                        "rank": 7
+                    },
+                    {
+                        "condition": {
+                            "reference": "#admission-diagnosis-934838"
+                        },
+                        "rank": 8
+                    }
+                ],
+                "patient": {
+                    "reference": "Patient/6612368"
+                },
+                "period": {
+                    "start": "2019-03-08",
+                    "end": "2019-08-04"
+                },
+                "team": [
+                    {
+                        "reference": "CareTeam/40"
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "http://localhost/fhir/HHH/Location/8360",
+            "resource": {
+                "resourceType": "Location",
+                "id": "8360",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2019-08-19T11:43:44.631527-05:00"
+                },
+                "identifier": [
+                    {
+                        "system": "http://kinnser.com/FHIR/Coding/HHH/Facility-Key",
+                        "value": "8360"
+                    },
+                    {
+                        "system": "http://kinnser.com/FHIR/Coding/HHH/Facility-Account-Number",
+                        "value": "53652"
+                    }
+                ],
+                "status": "active",
+                "name": "The Care Team Hospice",
+                "type": {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/v3/RoleCode",
+                            "code": "CHR",
+                            "display": "Chronic Care Facility"
+                        },
+                        {
+                            "system": "http://kinnser.com/FHIR/Coding/HHH/Facility-Type-Key",
+                            "code": "12",
+                            "display": "Assisted Living Facility"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "fullUrl": "http://localhost/fhir/HHH/Practitioner/2457358",
+            "resource": {
+                "resourceType": "Practitioner",
+                "id": "2457358",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2019-08-19T11:43:44.6317106-05:00"
+                },
+                "identifier": [
+                    {
+                        "system": "http://kinnser.com/FHIR/Coding/HHH/Physician-Key",
+                        "value": "0000003"
+                    },
+                    {
+                        "system": "http://hl7.org/fhir/sid/us-npi",
+                        "value": "0000000004"
+                    }
+                ],
+                "name": [
+                    {
+                        "family": "Test",
+                        "given": [
+                            "Physician"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "http://localhost/fhir/HHH/Practitioner/2297658",
+            "resource": {
+                "resourceType": "Practitioner",
+                "id": "2297658",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2019-08-19T11:43:44.6317354-05:00"
+                },
+                "identifier": [
+                    {
+                        "system": "http://kinnser.com/FHIR/Coding/HHH/Physician-Key",
+                        "value": "0000005"
+                    },
+                    {
+                        "system": "http://hl7.org/fhir/sid/us-npi",
+                        "value": "0000000006"
+                    }
+                ],
+                "name": [
+                    {
+                        "family": "Another Test",
+                        "given": [
+                            "Physician"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "http://localhost/fhir/HHH/Encounter/361320",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "361320",
+                "meta": {
+                    "profile": [
+                        "http://wellsky.com/FHIR/HHH/DSTU3/StructureDefinition/encounter-hhh"
+                    ]
+                },
+                "extension": [
+                    {
+                        "url": "http://wellsky.com/FHIR/HHH/DSTU3/StructureDefinition/clinic-type",
+                        "valueCode": "15"
+                    }
+                ],
+                "identifier": [
+                    {
+                        "system": "http://kinnser.com/FHIR/Coding/HHH/Level-Of-Care-Key",
+                        "value": "361320"
+                    }
+                ],
+                "status": "finished",
+                "subject": {
+                    "reference": "Patient/6612368"
+                },
+                "episodeOfCare": [
+                    {
+                        "reference": "EpisodeOfCare/8613406"
+                    }
+                ],
+                "participant": [
+                    {
+                        "type": [
+                            {
+                                "coding": [
+                                    {
+                                        "system": "http://hl7.org/fhir/v3/ParticipationType",
+                                        "code": "REF",
+                                        "display": "referrer"
+                                    }
+                                ]
+                            }
+                        ],
+                        "individual": {
+                            "reference": "Practitioner/2457358"
+                        }
+                    },
+                    {
+                        "type": [
+                            {
+                                "coding": [
+                                    {
+                                        "system": "http://hl7.org/fhir/v3/ParticipationType",
+                                        "code": "ATND",
+                                        "display": "attender"
+                                    }
+                                ]
+                            }
+                        ],
+                        "individual": {
+                            "reference": "Practitioner/2297658"
+                        }
+                    }
+                ],
+                "period": {
+                    "start": "2019-03-08"
+                },
+                "location": [
+                    {
+                        "location": {
+                            "reference": "Location/8360"
+                        },
+                        "status": "completed"
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "http://localhost/fhir/HHH/AllergyIntolerance/6813084",
+            "resource": {
+                "resourceType": "AllergyIntolerance",
+                "id": "6813084",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2019-08-19T11:43:44.6344806-05:00"
+                },
+                "identifier": [
+                    {
+                        "system": "http://kinnser.com/FHIR/Coding/HHH/Patient-Medispan-Allergy-Key",
+                        "value": "6813084"
+                    }
+                ],
+                "clinicalStatus": "active",
+                "verificationStatus": "unconfirmed",
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://kinnser.com/FHIR/Coding/HHH/Allergy-ID",
+                            "code": "337",
+                            "display": "Codeine"
+                        }
+                    ],
+                    "text": "337 - Codeine"
+                },
+                "patient": {
+                    "reference": "Patient/6612368"
+                },
+                "assertedDate": "2018-12-03",
+                "reaction": [
+                    {
+                        "substance": {
+                            "coding": [
+                                {
+                                    "system": "http://kinnser.com/FHIR/Coding/HHH/Allergy-ID",
+                                    "code": "337",
+                                    "display": "Codeine"
+                                }
+                            ],
+                            "text": "337 - Codeine"
+                        },
+                        "manifestation": [
+                            {
+                                "coding": [
+                                    {
+                                        "system": "http://kinnser.com/FHIR/Coding/HHH/Clinical-Finding",
+                                        "code": "U",
+                                        "display": "Unspecified"
+                                    }
+                                ],
+                                "text": "Clinical Finding - Unspecified"
+                            }
+                        ],
+                        "description": "hives"
+                    }
+                ]
+            }
+        }
+    ]
+}

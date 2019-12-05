@@ -1,0 +1,529 @@
+{
+    "resourceType": "Bundle",
+    "id": "c5083d41-e66f-4bf9-981e-f662b9ef9d4e",
+    "meta": {
+        "profile": [
+            "http://wellsky.com/FHIR/HHH/DSTU3/StructureDefinition/bundle-patient-medication-order"
+        ]
+    },
+    "type": "message",
+    "link": [
+        {
+            "relation": "self",
+            "url": "http://localhost:50338/KSI/MedicationService/v2/MedicationMessage/Bundle/c5083d41-e66f-4bf9-981e-f662b9ef9d4e"
+        }
+    ],
+    "entry": [
+        {
+            "fullUrl": "http://localhost/fhir/HHH/MessageHeader/f0b58b3d-e864-4b23-b52e-2dab632bccf5",
+            "resource": {
+                "resourceType": "MessageHeader",
+                "id": "f0b58b3d-e864-4b23-b52e-2dab632bccf5",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2019-08-19T12:05:47.0283008-05:00",
+                    "profile": [
+                        "http://wellsky.com/FHIR/HHH/DSTU3/StructureDefinition/messageheader-hl7"
+                    ],
+                    "tag": [
+                        {
+                            "system": "http://kinnser.com/FHIR/Coding/HHH/Meta/Tags",
+                            "code": "PatientMedMessage",
+                            "display": "Patient Medication Message"
+                        }
+                    ]
+                },
+                "extension": [
+                    {
+                        "url": "http://wellsky.com/FHIR/HHH/DSTU3/StructureDefinition/message-correlation-identifier",
+                        "valueString": "PBM_O09_IntegrationEventTrigger_2042299"
+                    },
+                    {
+                        "url": "http://wellsky.com/FHIR/HHH/DSTU3/StructureDefinition/trigger-event",
+                        "valueCode": "O09"
+                    },
+                    {
+                        "url": "http://wellsky.com/FHIR/HHH/DSTU3/StructureDefinition/trigger-event-date-time",
+                        "valueDateTime": "2019-08-19T12:04:58.587-05:00"
+                    }
+                ],
+                "event": {
+                    "system": "http://kinnser.com/FHIR/Coding/HHH/Message-Events",
+                    "code": "order-notify"
+                },
+                 "destination": [
+                    {
+                        "extension": [
+                            {
+                                "url": "http://wellsky.com/FHIR/HHH/DSTU3/StructureDefinition/receiving-facility",
+                                "valueString": "WellSky-APPLICATION"
+                            },
+                            {
+                                "url": "http://wellsky.com/FHIR/HHH/DSTU3/StructureDefinition/destination-endpoint-http-method",
+                                "valueCode": "POST"
+                            },
+                            {
+                                "url": "http://wellsky.com/FHIR/HHH/DSTU3/StructureDefinition/destination-endpoint-auth-method",
+                                "valueCode": "BASIC"
+                            },
+                            {
+                                "url": "http://wellsky.com/FHIR/HHH/DSTU3/StructureDefinition/destination-endpoint-auth-value",
+                                "valueString": "BASE64ENCVALUE"
+                            }
+                        ],
+                        "name": "HPS-APP",
+                        "endpoint": "https://some.endpoint.com/"
+                    }
+                ],
+                "timestamp": "2019-08-19T17:07:47.9979858+00:00",
+                "source": {
+                    "extension": [
+                        {
+                            "url": "http://wellsky.com/FHIR/HHH/DSTU3/StructureDefinition/sending-facility",
+                            "valueString": "Some Hospice, LLC"
+                        }
+                    ],
+                    "name": "WellSky",
+                    "endpoint": "http://localhost:50338/KSI/MedicationService/v2/MedicationMessage"
+                },
+                "reason": {
+                    "coding": [
+                        {
+                            "system": "http://kinnser.com/FHIR/Coding/HHH/Message-Reasons",
+                            "code": "order-submission"
+                        }
+                    ]
+                },
+                "focus": [
+                    {
+                        "reference": "Patient/7816759"
+                    },
+                    {
+                        "reference": "CareTeam/0"
+                    },
+                    {
+                        "reference": "EpisodeOfCare/9449806"
+                    },
+                    {
+                        "reference": "Location/4392"
+                    },
+                    {
+                        "reference": "Practitioner/2943579"
+                    },
+                    {
+                        "reference": "Practitioner/779483"
+                    },
+                    {
+                        "reference": "Encounter/15814718"
+                    },
+                    {
+                        "reference": "MedicationRequest/115482543"
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "http://localhost/fhir/HHH/Patient/7816759",
+            "resource": {
+                "resourceType": "Patient",
+                "id": "7816759",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2019-08-19T12:05:47.0284544-05:00"
+                },
+                "identifier": [
+                    {
+                        "system": "http://kinnser.com/FHIR/Coding/HHH/Patient-Key",
+                        "value": "000000001"
+                    },
+                    {
+                        "system": "http://kinnser.com/FHIR/Coding/HHH/External-Patient-ID",
+                        "value": "0000-000-002"
+                    },
+                    {
+                        "system": "http://hl7.org/fhir/sid/us-ssn",
+                        "value": "0001"
+                    },
+                    {
+                        "system": "http://kinnser.com/FHIR/Coding/HHH/Patient-MRN",
+                        "value": "0001"
+                    }
+                ],
+                "name": [
+                    {
+                        "family": "Test",
+                        "given": [
+                            "Patient",
+                            "P"
+                        ]
+                    }
+                ],
+                "telecom": [
+                    {
+                        "system": "phone",
+                        "value": "1234567890",
+                        "use": "home"
+                    }
+                ],
+                "gender": "male",
+                "birthDate": "1964-01-01",
+                "deceasedBoolean": false,
+                "address": [
+                    {
+                        "use": "home",
+                        "type": "both",
+                        "line": [
+                            "123 Some Street"
+                        ],
+                        "city": "Some City",
+                        "state": "TX",
+                        "postalCode": "12345"
+                    }
+                ],
+                "maritalStatus": {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/v3/NullFlavor",
+                            "code": "UNK",
+                            "display": "Unknown"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "fullUrl": "http://localhost/fhir/HHH/CareTeam/0",
+            "resource": {
+                "resourceType": "CareTeam",
+                "id": "0",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2019-08-19T12:05:47.028681-05:00"
+                },
+                "identifier": [
+                    {
+                        "system": "http://kinnser.com/FHIR/Coding/HHH/IDG-Team-Key",
+                        "value": "0"
+                    }
+                ],
+                "name": "N/A",
+                "subject": {
+                    "reference": "Patient/7816759"
+                }
+            }
+        },
+        {
+            "fullUrl": "http://localhost/fhir/HHH/EpisodeOfCare/9449806",
+            "resource": {
+                "resourceType": "EpisodeOfCare",
+                "id": "9449806",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2019-08-19T12:05:47.0287513-05:00"
+                },
+                "identifier": [
+                    {
+                        "system": "http://kinnser.com/FHIR/Coding/HHH/Admission-Key",
+                        "value": "9449806"
+                    }
+                ],
+                "status": "active",
+                "patient": {
+                    "reference": "Patient/7816759"
+                },
+                "period": {
+                    "start": "2019-08-15"
+                },
+                "team": [
+                    {
+                        "reference": "CareTeam/0"
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "http://localhost/fhir/HHH/Location/4392",
+            "resource": {
+                "resourceType": "Location",
+                "id": "4392",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2019-08-19T12:05:47.0288136-05:00"
+                },
+                "identifier": [
+                    {
+                        "system": "http://kinnser.com/FHIR/Coding/HHH/Facility-Key",
+                        "value": "4392"
+                    },
+                    {
+                        "system": "http://kinnser.com/FHIR/Coding/HHH/Facility-Account-Number",
+                        "value": "59507"
+                    }
+                ],
+                "status": "active",
+                "name": "Standards Hospice Inc.",
+                "type": {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/v3/RoleCode",
+                            "code": "PTRES",
+                            "display": "Patient's Residence"
+                        },
+                        {
+                            "system": "http://kinnser.com/FHIR/Coding/HHH/Facility-Type-Key",
+                            "code": "1",
+                            "display": "Home"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "fullUrl": "http://localhost/fhir/HHH/Practitioner/2943579",
+            "resource": {
+                "resourceType": "Practitioner",
+                "id": "2943579",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2019-08-19T12:05:47.0290876-05:00"
+                },
+                "identifier": [
+                    {
+                        "system": "http://kinnser.com/FHIR/Coding/HHH/Physician-Key",
+                        "value": "0000003"
+                    },
+                    {
+                        "system": "http://hl7.org/fhir/sid/us-npi",
+                        "value": "0000000004"
+                    }
+                ],
+                "name": [
+                    {
+                        "family": "Test",
+                        "given": [
+                            "Physician"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "http://localhost/fhir/HHH/Practitioner/779483",
+            "resource": {
+                "resourceType": "Practitioner",
+                "id": "779483",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2019-08-19T12:05:47.02912-05:00"
+                },
+                "identifier": [
+                    {
+                        "system": "http://kinnser.com/FHIR/Coding/HHH/Physician-Key",
+                        "value": "0000005"
+                    },
+                    {
+                        "system": "http://hl7.org/fhir/sid/us-npi",
+                        "value": "0000000006"
+                    }
+                ],
+                "name": [
+                    {
+                        "family": "Another Test",
+                        "given": [
+                            "Physician"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "http://localhost/fhir/HHH/Encounter/15814718",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "15814718",
+                "meta": {
+                    "profile": [
+                        "http://wellsky.com/FHIR/HHH/DSTU3/StructureDefinition/encounter-hhh"
+                    ]
+                },
+                "extension": [
+                    {
+                        "url": "http://wellsky.com/FHIR/HHH/DSTU3/StructureDefinition/clinic-type",
+                        "valueCode": "15"
+                    }
+                ],
+                "identifier": [
+                    {
+                        "system": "http://kinnser.com/FHIR/Coding/HHH/Episode-Key",
+                        "value": "15814718"
+                    }
+                ],
+                "status": "arrived",
+                "subject": {
+                    "reference": "Patient/7816759"
+                },
+                "episodeOfCare": [
+                    {
+                        "reference": "EpisodeOfCare/9449806"
+                    }
+                ],
+                "participant": [
+                    {
+                        "type": [
+                            {
+                                "coding": [
+                                    {
+                                        "system": "http://hl7.org/fhir/v3/ParticipationType",
+                                        "code": "REF",
+                                        "display": "referrer"
+                                    }
+                                ]
+                            }
+                        ],
+                        "individual": {
+                            "reference": "Practitioner/2943579"
+                        }
+                    },
+                    {
+                        "type": [
+                            {
+                                "coding": [
+                                    {
+                                        "system": "http://hl7.org/fhir/v3/ParticipationType",
+                                        "code": "ATND",
+                                        "display": "attender"
+                                    }
+                                ]
+                            }
+                        ],
+                        "individual": {
+                            "reference": "Practitioner/779483"
+                        }
+                    }
+                ],
+                "period": {
+                    "start": "2019-08-15"
+                },
+                "location": [
+                    {
+                        "location": {
+                            "reference": "Location/4392"
+                        },
+                        "status": "active"
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "http://localhost/fhir/HHH/MedicationRequest/115482543",
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "id": "115482543",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2019-08-19T12:05:47.0292025-05:00"
+                },
+                "contained": [
+                    {
+                        "resourceType": "Medication",
+                        "id": "med-ndc-00228427111",
+                        "code": {
+                            "coding": [
+                                {
+                                    "system": "http://hl7.org/fhir/sid/ndc",
+                                    "code": "00228427111",
+                                    "display": "Morphine Sulfate ER"
+                                },
+                                {
+                                    "system": "http://kinnser.com/FHIR/Coding/HHH/Medication-ID",
+                                    "code": "35866",
+                                    "display": "Morphine Sulfate ER"
+                                }
+                            ]
+                        },
+                        "isOverTheCounter": false,
+                        "form": {
+                            "coding": [
+                                {
+                                    "system": "http://kinnser.com/FHIR/Coding/HHH/Medication-Form",
+                                    "code": "Tablet Extended Release",
+                                    "display": "Tablet Extended Release"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "extension": [
+                    {
+                        "url": "http://wellsky.com/FHIR/HHH/DSTU3/StructureDefinition/request-order-control",
+                        "valueCode": "DC"
+                    },
+                    {
+                        "url": "http://wellsky.com/FHIR/HHH/DSTU3/StructureDefinition/patient-medication-covered",
+                        "valueBoolean": true
+                    }
+                ],
+                "identifier": [
+                    {
+                        "system": "http://kinnser.com/FHIR/Coding/HHH/Patient-Medispan-Key",
+                        "value": "115482543"
+                    }
+                ],
+                "status": "active",
+                "intent": "order",
+                "priority": "routine",
+                "medicationReference": {
+                    "reference": "#med-ndc-00228427111"
+                },
+                "subject": {
+                    "reference": "Patient/7816759"
+                },
+                "context": {
+                    "reference": "Encounter/15814718"
+                },
+                "requester": {
+                    "agent": {
+                        "reference": "Practitioner/779483"
+                    }
+                },
+                "dosageInstruction": [
+                    {
+                        "sequence": 1,
+                        "text": "Oral 3 times daiy scheduled for spinal nerve pain.",
+                        "timing": {
+                            "code": {
+                                "coding": [
+                                    {
+                                        "system": "http://hl7.org/fhir/v3/GTSAbbreviation",
+                                        "code": "TID",
+                                        "display": "TID - Three times a day"
+                                    }
+                                ]
+                            }
+                        },
+                        "asNeededBoolean": false,
+                        "route": {
+                            "coding": [
+                                {
+                                    "system": "http://snomed.info/sct",
+                                    "code": "26643006",
+                                    "display": "Oral route"
+                                }
+                            ]
+                        },
+                        "doseQuantity": {
+                            "value": 0.5,
+                            "system": "http://hl7.org/fhir/v3/orderableDrugForm",
+                            "code": "TAB"
+                        }
+                    }
+                ],
+                "dispenseRequest": {
+                    "validityPeriod": {
+                        "start": "2019-08-18"
+                    }
+                }
+            }
+        }
+    ]
+}

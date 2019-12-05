@@ -1,0 +1,313 @@
+{
+    "resourceType": "Bundle",
+    "id": "e4a4eb25-e2dc-47de-9c81-5914afe6c647",
+    "meta": {
+        "profile": [
+            "http://wellsky.com/FHIR/HHH/DSTU3/StructureDefinition/bundle-patient-adt"
+        ]
+    },
+    "type": "message",
+    "link": [
+        {
+            "relation": "self",
+            "url": "http://kinnser.net/KSI/PatientAdtService/v2/PatientAdtMessage/Bundle/e4a4eb25-e2dc-47de-9c81-5914afe6c647"
+        }
+    ],
+    "entry": [
+        {
+            "fullUrl": "http://localhost/fhir/HHH/MessageHeader/94b02240-4574-4936-ae9d-20d91f36faba",
+            "resource": {
+                "resourceType": "MessageHeader",
+                "id": "94b02240-4574-4936-ae9d-20d91f36faba",
+                "meta": {
+                    "profile": [
+                        "http://wellsky.com/FHIR/HHH/DSTU3/StructureDefinition/messageheader-hl7"
+                    ]
+                },
+                "extension": [
+                    {
+                        "url": "http://wellsky.com/FHIR/HHH/DSTU3/StructureDefinition/message-correlation-identifier",
+                        "valueString": "PATIENTADT_A05_IntegrationEventTrigger_2041237"
+                    },
+                    {
+                        "url": "http://wellsky.com/FHIR/HHH/DSTU3/StructureDefinition/trigger-event",
+                        "valueCode": "A05"
+                    },
+                    {
+                        "url": "http://wellsky.com/FHIR/HHH/DSTU3/StructureDefinition/trigger-event-date-time",
+                        "valueDateTime": "2019-08-19T11:25:16.16-05:00"
+                    }
+                ],
+                "event": {
+                    "system": "http://hl7.org/fhir/message-events",
+                    "code": "admin-notify"
+                },
+                 "destination": [
+                    {
+                        "extension": [
+                            {
+                                "url": "http://wellsky.com/FHIR/HHH/DSTU3/StructureDefinition/receiving-facility",
+                                "valueString": "WellSky-APPLICATION"
+                            },
+                            {
+                                "url": "http://wellsky.com/FHIR/HHH/DSTU3/StructureDefinition/destination-endpoint-http-method",
+                                "valueCode": "POST"
+                            },
+                            {
+                                "url": "http://wellsky.com/FHIR/HHH/DSTU3/StructureDefinition/destination-endpoint-auth-method",
+                                "valueCode": "BASIC"
+                            },
+                            {
+                                "url": "http://wellsky.com/FHIR/HHH/DSTU3/StructureDefinition/destination-endpoint-auth-value",
+                                "valueString": "BASE64ENCVALUE"
+                            }
+                        ],
+                        "name": "HPS-APP",
+                        "endpoint": "https://some.endpoint.com/"
+                    }
+                ],
+                "timestamp": "2019-08-19T16:20:34.1905589+00:00",
+                "source": {
+                    "extension": [
+                        {
+                            "url": "http://wellsky.com/FHIR/HHH/DSTU3/StructureDefinition/sending-facility",
+                            "valueString": "Some Hospice, LLC"
+                        }
+                    ],
+                    "name": "WellSky",
+                    "endpoint": "http://kinnser.net/KSI/PatientAdtService/v2/PatientAdtMessage"
+                },
+                "reason": {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/message-reasons-encounter",
+                            "code": "edit"
+                        }
+                    ]
+                },
+                "focus": [
+                    {
+                        "reference": "Patient/7833993"
+                    },
+                    {
+                        "reference": "CareTeam/0"
+                    },
+                    {
+                        "reference": "EpisodeOfCare/0"
+                    },
+                    {
+                        "reference": "Location/11486"
+                    },
+                    {
+                        "reference": "Encounter/0"
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "http://localhost/fhir/HHH/Patient/7833993",
+            "resource": {
+                "resourceType": "Patient",
+                "id": "7833993",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2019-08-19T11:26:07.439043-05:00"
+                },
+                "identifier": [
+                    {
+                        "system": "http://kinnser.com/FHIR/Coding/HHH/Patient-Key",
+                        "value": "000000001"
+                    },
+                    {
+                        "system": "http://kinnser.com/FHIR/Coding/HHH/External-Patient-ID",
+                        "value": "0000-000-002"
+                    },
+                    {
+                        "system": "http://hl7.org/fhir/sid/us-ssn",
+                        "value": "0001"
+                    },
+                    {
+                        "system": "http://kinnser.com/FHIR/Coding/HHH/Patient-MRN",
+                        "value": "0001"
+                    }
+                ],
+                "name": [
+                    {
+                        "family": "Test",
+                        "given": [
+                            "Patient",
+                            "P"
+                        ]
+                    }
+                ],
+                "telecom": [
+                    {
+                        "system": "phone",
+                        "value": "1234567890",
+                        "use": "home"
+                    }
+                ],
+                "gender": "male",
+                "birthDate": "1964-01-01",
+                "deceasedBoolean": false,
+                "address": [
+                    {
+                        "use": "home",
+                        "type": "both",
+                        "line": [
+                            "123 Some Street"
+                        ],
+                        "city": "Some City",
+                        "state": "TX",
+                        "postalCode": "12345"
+                    }
+                ],
+                "maritalStatus": {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/v3/NullFlavor",
+                            "code": "UNK",
+                            "display": "Unknown"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "fullUrl": "http://localhost/fhir/HHH/CareTeam/0",
+            "resource": {
+                "resourceType": "CareTeam",
+                "id": "0",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2019-08-19T11:26:07.4392913-05:00"
+                },
+                "identifier": [
+                    {
+                        "system": "http://kinnser.com/FHIR/Coding/HHH/IDG-Team-Key",
+                        "value": "0"
+                    }
+                ],
+                "name": "N/A",
+                "subject": {
+                    "reference": "Patient/7833993"
+                }
+            }
+        },
+        {
+            "fullUrl": "http://localhost/fhir/HHH/EpisodeOfCare/0",
+            "resource": {
+                "resourceType": "EpisodeOfCare",
+                "id": "0",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2019-08-19T11:26:07.4393734-05:00"
+                },
+                "identifier": [
+                    {
+                        "system": "http://kinnser.com/FHIR/Coding/HHH/Admission-Key",
+                        "value": "0"
+                    }
+                ],
+                "status": "planned",
+                "patient": {
+                    "reference": "Patient/7833993"
+                },
+                "period": {
+                    "start": "2019-08-19"
+                },
+                "team": [
+                    {
+                        "reference": "CareTeam/0"
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "http://localhost/fhir/HHH/Location/11486",
+            "resource": {
+                "resourceType": "Location",
+                "id": "11486",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2019-08-19T11:26:07.4394622-05:00"
+                },
+                "identifier": [
+                    {
+                        "system": "http://kinnser.com/FHIR/Coding/HHH/Facility-Key",
+                        "value": "11486"
+                    },
+                    {
+                        "system": "http://kinnser.com/FHIR/Coding/HHH/Facility-Account-Number",
+                        "value": "1831"
+                    }
+                ],
+                "status": "active",
+                "name": "Comfort Care Home Health and Hospice",
+                "type": {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/v3/RoleCode",
+                            "code": "PTRES",
+                            "display": "Patient's Residence"
+                        },
+                        {
+                            "system": "http://kinnser.com/FHIR/Coding/HHH/Facility-Type-Key",
+                            "code": "1",
+                            "display": "Home"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "fullUrl": "http://localhost/fhir/HHH/Encounter/0",
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "0",
+                "meta": {
+                    "profile": [
+                        "http://wellsky.com/FHIR/HHH/DSTU3/StructureDefinition/encounter-hhh"
+                    ]
+                },
+                "extension": [
+                    {
+                        "url": "http://wellsky.com/FHIR/HHH/DSTU3/StructureDefinition/clinic-type",
+                        "valueCode": "15"
+                    }
+                ],
+                "identifier": [
+                    {
+                        "system": "http://kinnser.com/FHIR/Coding/HHH/Level-Of-Care-Key",
+                        "value": "0"
+                    }
+                ],
+                "status": "planned",
+                "class": {
+                    "system": "http://hl7.org/fhir/v3/ActCode",
+                    "code": "PRENC",
+                    "display": "pre-admission"
+                },
+                "subject": {
+                    "reference": "Patient/7833993"
+                },
+                "episodeOfCare": [
+                    {
+                        "reference": "EpisodeOfCare/0"
+                    }
+                ],
+                "period": {
+                    "start": "2019-08-19"
+                },
+                "location": [
+                    {
+                        "location": {
+                            "reference": "Location/11486"
+                        },
+                        "status": "planned"
+                    }
+                ]
+            }
+        }
+    ]
+}
